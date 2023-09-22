@@ -31,11 +31,11 @@ public class Ratmovement : MonoBehaviour
         // Calculate the new position
         Vector3 newPosition = transform.position + new Vector3(randomDirection.x, 0f, randomDirection.z) * moveSpeed * Time.deltaTime;
 
-        // Check for collisions with walls or other objects
+        // Check for collisions with obstacles
         Collider[] hitColliders = Physics.OverlapSphere(newPosition, 0.5f); // Adjust the radius as needed
         foreach (Collider collider in hitColliders)
         {
-            if (collider.gameObject.CompareTag("Wall") || collider.gameObject.CompareTag("Obstacle"))
+            if (collider.gameObject.CompareTag("Obstacle"))
             {
                 // Reverse the direction upon collision
                 randomDirection = GetRandomDirection();

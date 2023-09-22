@@ -5,15 +5,13 @@ public class RatSpawnManager : MonoBehaviour
     public GameObject ratPrefab; // Reference to the rat prefab
     public float spawnInterval = 5f; // Time interval between spawns
     public float destroyTime = 90f; // Time after which rats are destroyed
+    public float spawnHalfSize = 0.5f; // Half-size of the spawn area in the X and Z dimensions
+    public float spawnYPosition = 3.45f; // Fixed Y-axis position for spawning
 
-    private Transform spawnPoint;
     private float elapsedTime;
 
     private void Start()
     {
-        // Find the spawn point by name (change "SpawnPoint" to match the actual name)
-        spawnPoint = GameObject.Find("SpawnPoint").transform;
-
         // Start spawning rats
         InvokeRepeating("SpawnRat", 0f, spawnInterval);
 
@@ -36,8 +34,15 @@ public class RatSpawnManager : MonoBehaviour
 
     private void SpawnRat()
     {
-        // Instantiate a rat prefab at the spawn point position
-        Instantiate(ratPrefab, spawnPoint.position, Quaternion.identity);
+        // Generate random spawn positions within the specified area
+        float randomX = Random.Range(-spawnHalfSize, spawnHalfSize);
+        float randomZ = Random.Range(-spawnHalfSize, spawnHalfSize);
+
+        // Set the Y-coordinate to the desired spawnYPosition
+        Vector3 spawnPosition = new Vector3(randomX, spawnYPosition, randomZ);
+
+        // Instantiate a rat prefab at the spawn position
+        Instantiate(ratPrefab, spawnPosition, Quaternion.identity);
     }
 
     private void DestroyRats()
