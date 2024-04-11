@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 9e2dd99b869ae254b80a457d8ad85d6d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Lucy the Cat
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 3d727d7fdfc126b409a73ef560f78e6c, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

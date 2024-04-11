@@ -7,6 +7,8 @@ public class Ratmovement : MonoBehaviour
 
     private Vector3 randomDirection;
     private float timer;
+    private bool isFacingRight = true;
+    private Transform ratTransform;
 
     private void Start()
     {
@@ -15,6 +17,9 @@ public class Ratmovement : MonoBehaviour
 
         // Start with a random direction
         randomDirection = GetRandomDirection();
+
+        // Get the rat's transform component
+        ratTransform = transform;
     }
 
     private void Update()
@@ -26,10 +31,20 @@ public class Ratmovement : MonoBehaviour
             // Change direction and reset the timer
             randomDirection = GetRandomDirection();
             timer = changeInterval;
+
+            // Check and adjust the rat's facing direction
+            if (randomDirection.x < 0 && isFacingRight)
+            {
+                Flip();
+            }
+            else if (randomDirection.x > 0 && !isFacingRight)
+            {
+                Flip();
+            }
         }
 
         // Calculate the new position
-        Vector3 newPosition = transform.position + new Vector3(randomDirection.x, 0f, randomDirection.z) * moveSpeed * Time.deltaTime;
+        Vector3 newPosition = ratTransform.position + randomDirection * moveSpeed * Time.deltaTime;
 
         // Check for collisions with obstacles
         Collider[] hitColliders = Physics.OverlapSphere(newPosition, 0.5f); // Adjust the radius as needed
@@ -44,12 +59,21 @@ public class Ratmovement : MonoBehaviour
         }
 
         // Apply the new position
-        transform.position = newPosition;
+        ratTransform.position = newPosition;
     }
 
     private Vector3 GetRandomDirection()
     {
         // Generate a random direction
         return new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f)).normalized;
+    }
+
+    private void Flip()
+    {
+        // Reverse the rat's facing direction
+        isFacingRight = !isFacingRight;
+
+        // Rotate the rat 180 degrees around the Y-axis
+        ratTransform.Rotate(0f, 180f, 0f);
     }
 }
