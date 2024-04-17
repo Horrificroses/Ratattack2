@@ -6,11 +6,18 @@ public class FryCollision : MonoBehaviour
     private int score = 0;
     public TextMeshProUGUI scoreText;
 
+    // Reference to the squeak sound effect
+    public AudioClip squeakSound;
+    private AudioSource audioSource;
+
     private void Start()
     {
         // Initialize the score to 0 at the start
         score = 0;
         UpdateScoreText();
+
+        // Get the AudioSource component attached to this GameObject
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,6 +30,12 @@ public class FryCollision : MonoBehaviour
 
             // Display the updated score
             UpdateScoreText();
+
+            // Play the squeak sound effect
+            if (squeakSound != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(squeakSound);
+            }
 
             // Destroy the rat object
             Destroy(other.gameObject);

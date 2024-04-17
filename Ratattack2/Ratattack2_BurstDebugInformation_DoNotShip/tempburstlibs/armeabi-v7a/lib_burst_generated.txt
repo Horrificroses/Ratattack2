@@ -155,7 +155,6 @@ Library: lib_burst_generated
 --root-assembly=C:\Users\heave\OneDrive\Desktop\Ratattack2\Ratattack2\Temp\StagingArea\Data\Managed\Unity.Services.Core.Environments.Internal.dll
 --root-assembly=C:\Users\heave\OneDrive\Desktop\Ratattack2\Ratattack2\Temp\StagingArea\Data\Managed\Unity.Burst.dll
 --root-assembly=C:\Users\heave\OneDrive\Desktop\Ratattack2\Ratattack2\Temp\StagingArea\Data\Managed\Unity.TextMeshPro.dll
---root-assembly=C:\Users\heave\OneDrive\Desktop\Ratattack2\Ratattack2\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=C:\Users\heave\OneDrive\Desktop\Ratattack2\Ratattack2\Temp\StagingArea\Data\Managed\Unity.Timeline.dll
 --root-assembly=C:\Users\heave\OneDrive\Desktop\Ratattack2\Ratattack2\Temp\StagingArea\Data\Managed\Unity.Services.Core.dll
 --root-assembly=C:\Users\heave\OneDrive\Desktop\Ratattack2\Ratattack2\Temp\StagingArea\Data\Managed\Unity.RenderPipeline.Universal.ShaderLibrary.dll
@@ -173,6 +172,7 @@ Library: lib_burst_generated
 --root-assembly=C:\Users\heave\OneDrive\Desktop\Ratattack2\Ratattack2\Temp\StagingArea\Data\Managed\Unity.XR.OpenXR.Features.RuntimeDebugger.dll
 --root-assembly=C:\Users\heave\OneDrive\Desktop\Ratattack2\Ratattack2\Temp\StagingArea\Data\Managed\UnityEngine.SpatialTracking.dll
 --root-assembly=C:\Users\heave\OneDrive\Desktop\Ratattack2\Ratattack2\Temp\StagingArea\Data\Managed\Unity.Services.Core.Configuration.dll
+--root-assembly=C:\Users\heave\OneDrive\Desktop\Ratattack2\Ratattack2\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=C:\Users\heave\OneDrive\Desktop\Ratattack2\Ratattack2\Temp\StagingArea\Data\Managed\Unity.XR.OpenXR.Features.ConformanceAutomation.dll
 --root-assembly=C:\Users\heave\OneDrive\Desktop\Ratattack2\Ratattack2\Temp\StagingArea\Data\Managed\Unity.XR.OpenXR.Features.MockRuntime.dll
 --root-assembly=C:\Users\heave\OneDrive\Desktop\Ratattack2\Ratattack2\Temp\StagingArea\Data\Managed\Unity.Subsystem.Registration.dll
