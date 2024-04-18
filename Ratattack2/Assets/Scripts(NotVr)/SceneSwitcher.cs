@@ -12,6 +12,15 @@ public class SceneSwitcher : MonoBehaviour
 
     private void SwitchScene()
     {
-        SceneManager.LoadScene(sceneName);
+        if (string.IsNullOrEmpty(sceneName))
+        {
+            // If sceneName is empty or null, reload the current scene
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        else
+        {
+            // Otherwise, load the scene specified by sceneName
+            SceneManager.LoadScene(sceneName);
+        }
     }
 }
